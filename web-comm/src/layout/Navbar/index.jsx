@@ -1,4 +1,4 @@
-import { MdOutlineMenu } from "react-icons/md";
+import {MdOutlineMenu} from "react-icons/md"
 import { BUTTON_LINKS, NAV_LINKS } from "../../assets/Data";
 import { Link, NavLink } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -11,16 +11,13 @@ function Navbar() {
     setActiveLink(path);
   };
   return (
-    <div className=" fixed w-full left-0 z-10 navbar-transparent px-10 py-4 max-lg:p-0 max-xl:p-0 max-sm:p-0">
-      
-
-      <div className=" items-center">
+    <div className=" fixed w-full left-0 z-10 navbar-transparent flex px-10 py-2 max-lg:p-0 max-xl:p-0 max-sm:p-0">
+      <div className="navbar-start">
         <div className="dropdown">
-          
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <MdOutlineMenu fontSize={24} />
           </div>
-          
+
           <ul
             tabIndex={0}
             className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
@@ -33,7 +30,6 @@ function Navbar() {
           </ul>
         </div>
 
-        
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             {NAV_LINKS.map((link) => (
@@ -62,8 +58,7 @@ function Navbar() {
         </div>
       </div>
 
-    
-      <div className="navbar-end flex gap-3 max-md:w-full max-lg:px-1">
+      <div className="navbar-end flex items-center gap-3 max-md:w-full max-lg:px-1">
         {BUTTON_LINKS.map((button) => (
           <Link
             key={button.id}
@@ -71,9 +66,9 @@ function Navbar() {
               button.variant === "none"
                 ? "btn btn-ghost "
                 : button.variant === "outlined"
-                ? "border-2 border-blue-600 rounded flex items-center gap-2 p-2 max-lg:gap-0 max-lg:px-1 text-blue-600"
+                ? "border-2 border-blue-600 rounded flex items-center gap-2 p-1 max-lg:gap-0 max-lg:px-1 text-blue-600"
                 : button.variant === "filled"
-                ? "bg-[#031AFD] text-white rounded flex items-center gap-2 p-2 max-lg:gap-0 max-lg:px-1"
+                ? "bg-[#031AFD] text-white rounded flex items-center gap-2 p-1 max-lg:gap-0 max-lg:px-1"
                 : "btn btn-ghost"
             }`}
             to={button.path}
