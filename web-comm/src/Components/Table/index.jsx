@@ -1,5 +1,5 @@
 import React from "react";
-import { Check } from "../../../assets/icons";
+import { Check } from "../../assets/icons";
 
 function Table({ data }) {
   return (

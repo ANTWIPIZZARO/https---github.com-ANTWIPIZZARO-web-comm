@@ -3,16 +3,16 @@ import {
   placeholder,
   placeholder2,
   onboarding,
-} from "../assets/images";
-import Card from "../Components/cards/Card";
+} from "../../assets/images";
+import Card from "../../Components/Cards/Card";
 import {
   FAQ,
   PRODUCTS_SERVICES,
   PRODUCT_LIST_DATA,
-} from "../Components/Data/productData";
-import ServicesCard from "../Components/cards/CardServices";
-import Faq from "../Components/Faq/index";
-import Header from "../Components/Header/Header";
+} from "../../Components/Data/productData";
+import ServicesCard from "../../Components/Cards/CardService";
+import Faq from "../../Components/Faq/index";
+import Header from "../../Components/Header/Head";
 
 function Products() {
   return (

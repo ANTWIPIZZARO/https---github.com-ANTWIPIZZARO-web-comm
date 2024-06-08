@@ -4,10 +4,10 @@ import {
   EXTENDED_PRICING_DATA,
   FAQ,
   PRICING_DATA,
-} from "../Components/Data/priceData";
-import { Check } from "../assets/icons";
-import Table from "../Components/Data/Table/index";
-import Faq from "../Components/Faq/index";
+} from "../../Components/Data/priceData";
+import { Check } from "../../assets/icons";
+import Table from "../../Components/Table/index";
+import Faq from "../../Components/Faq/index";
 
 function Price() {
   return (

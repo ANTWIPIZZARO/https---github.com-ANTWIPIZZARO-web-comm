@@ -1,10 +1,10 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { hero, demo } from "../assets/images";
-import Card from ".././Components/cards/Card";
-import { MAIN_DATA, PRODUCTS_SERVICES } from "../Components/Data/mainData";
-import ServicesCard from ".././Components/cards/CardServices";
+import { hero, demo } from "../../assets/images";
+import Card from "../../Components/Cards/Card";
+import { MAIN_DATA, PRODUCTS_SERVICES } from "../../Components/Data/mainData";
+import ServicesCard from "../../Components/Cards/CardService";
 
 function Home() {
   return (

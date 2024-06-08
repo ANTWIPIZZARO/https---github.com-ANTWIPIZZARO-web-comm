@@ -1,11 +1,11 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import Card from "../Components/cards/Card";
-import { FAQ, FEATURES_DATA, FEATURES_SERVICES } from "../Components/Data/FeatureData";
-import ServicesCard from "../Components/cards/CardServices";
-import { banner, benefitOne, feature } from ".././assets/images";
-import Faq from "../Components/Faq/index";
+import Card from "../../Components/Cards/Card";
+import { FAQ, FEATURES_DATA, FEATURES_SERVICES } from "../../Components/Data/FeatureData";
+import ServicesCard from "../../Components/Cards/CardService";
+import { banner, benefitOne, feature } from "../../assets/images";
+import Faq from "../../Components/Faq/index";
 
 function Features() {
   return (
