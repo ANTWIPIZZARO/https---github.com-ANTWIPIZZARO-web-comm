@@ -11,7 +11,7 @@ function Navbar() {
     setActiveLink(path);
   };
   return (
-    <div className=" fixed w-full left-0 z-10 navbar-transparent flex px-10 py-2 max-lg:p-0 max-xl:p-0 max-sm:p-0">
+    <div className=" fixed w-full right-0 z-10 navbar-transparent flex px-10 py-2 max-lg:p-0 max-xl:p-0 max-sm:p-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

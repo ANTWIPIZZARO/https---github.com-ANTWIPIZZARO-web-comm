@@ -22,7 +22,7 @@ const NAV_LINKS = [
   {
     id: 4,
     linkName: "Industries",
-    path: "/industries",
+    path: "/about",
   },
   {
     id: 5,
