@@ -1,56 +1,38 @@
-import React from "react";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-import { hero, demo } from "../../assets/images";
-import Card from "../../Components/Cards/Card";
-import { MAIN_DATA, PRODUCTS_SERVICES } from "../../Components/Data/mainData";
-import ServicesCard from "../../Components/Cards/CardService";
+import axios from "axios";
+import { useQuery } from "react-query";
+
+const ROOT = "http://localhost:8080";
+async function getProducts() {
+  const response = await axios.get(`${ROOT}/products`);
+  console.log(response.data);
+  return response.data;
+}
 
 function Home() {
+  const { data, isLoading, error } = useQuery("products", getProducts);
+  if (isLoading) {
+      return (
+      <div className="flex items-center justify-center h-64 w-64 mx-auto mt-40 border">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="text-red-600 flex items-center justify-center h-64 w-64 mx-auto mt-40 border">
+        {error.message}
+      </div>
+    );
+  }
   return (
-    <div className="flex flex-col w-full ">
-      {/* Top Section */}
-      <section className="h-[700px] flex items-center justify-between mx-auto max-lg:flex-col-reverse max-lg:mx-0 max-lg:h-full">
-        <div className="flex flex-col items-start justify-start ml-8 w-[85%]">
-          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2a3cde] to-blue-300 py-3">
-            Simplify how your organization communicates
-          </h1>
-          <p className="text-light-gray my-8 ">
-            Dodo is an enterprise communicaiton platform that offers
-            organization reliable and secure one-to-one calls, conference
-            calling, mass broadcsat, one-on-one messaging, multimedia
-            filesharing and cloud storage in a single app.
-          </p>
-          <Link
-            to="/pricing"
-            role="button"
-            className="w-max flex gap-2 gradient-text items-center text-[#031AFD] py-3 p-3 my-2 rounded-md font-bold"
-          >
-            Dodo is free for use if you like.
-            <FaArrowRightLong />
-          </Link>
+    <div className="flex flex-col w-full mt-40">
+      {data?.map((product) => (
+        <div key={product.id}>
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
         </div>
-        {/* Image */}
-        <div className="w-full overflow-hidden">
-          <img src={hero} alt="business-bubble" className="" />
-        </div>
-      </section>
-      {/* Demo Section */}
-      <section className="gap-5 mx-auto my-28 flex flex-col items-start justify-start px-10">
-        <h1 className="text-heading-gray font-bold text-lg">Watch Demo</h1>
-        <img src={demo} alt="Demo" className="w-full rounded-xl" />
-      </section>
-      {/* Dodo list section */}
-      <section className="flex flex-col items-center justify-start px-10 mt-20 max-md:p-0">
-        <Card cardData={MAIN_DATA} />
-      </section>
-      {/* Services list section */}
-      <section className="flex flex-col items-center justify-center gap-5 my-36">
-        <ServicesCard
-          data={PRODUCTS_SERVICES}
-          title="A communication tool that suits your workplace, however you work."
-        />
-      </section>
+      ))}
     </div>
   );
 }
